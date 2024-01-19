@@ -42,7 +42,7 @@ resource "aws_elasticache_cluster" "main" {
   engine_version       = var.engine_version
   node_type            = var.node_type
   num_cache_nodes      = var.num_cache_nodes
-  parameter_group_name = aws_elasticache_parameter_group.main
+  parameter_group_name = aws_elasticache_parameter_group.main.name
   port                 = 6379
   security_group_ids = [aws_security_group.main.id]
   subnet_group_name = aws_elasticache_subnet_group.main.name
