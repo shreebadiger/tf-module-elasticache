@@ -45,6 +45,6 @@ resource "aws_elasticache_cluster" "main" {
   parameter_group_name = aws_elasticache_parameter_group.main
   port                 = 6379
   security_group_ids = [aws_security_group.main.id]
-  subnet_group_name = aws_elasticache_subnet_group.main
+  subnet_group_name = aws_elasticache_subnet_group.main.name
   tags = merge(var.tags, {Name = local.name})
 }
